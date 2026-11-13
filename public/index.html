@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Retention & Portfolio Risk Analytics | Retail Banking Platform</title>
+  
+  <!-- Google Fonts: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome (Local or CDN Fallback) -->
+  <link rel="stylesheet" href="vendor/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom Styling -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Three.js Ambient Particle Stream Background -->
+  <div id="three-canvas-container"></div>
+
+  <!-- Main Application Wrapper -->
+  <div class="dashboard-wrapper">
+    
+    <!-- Top Navigation Bar -->
+    <header class="top-navbar">
+      <div class="brand-container">
+        <div class="brand-logo-icon">
+          <i class="fa-solid fa-building-columns"></i>
+        </div>
+        <div class="brand-text">
+          <h1>Retail Banking Customer Retention & Portfolio Risk Platform</h1>
+          <p>Enterprise Attrition Intelligence & Predictive Asset Preservation</p>
+        </div>
+      </div>
+      <div class="navbar-actions">
+        <div class="user-profile-badge">
+          <div class="user-avatar-badge">
+            <i class="fa-solid fa-user-check"></i>
+            <span class="user-status-dot"></span>
+          </div>
+          <div class="user-meta">
+            <span class="user-name">Intikhab Ahmad Shah</span>
+            <span class="user-training-id">Training ID: TRN-2026-000059</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="tabs-navigation" id="main-tabs-nav">
+      <button class="nav-tab-btn active" data-tab="tab-summary">
+        <i class="fa-solid fa-chart-pie"></i> Executive Summary
+      </button>
+      <button class="nav-tab-btn" data-tab="tab-demographics">
+        <i class="fa-solid fa-earth-europe"></i> Regional & Demographics
+      </button>
+      <button class="nav-tab-btn" data-tab="tab-products">
+        <i class="fa-solid fa-wallet"></i> Product Depth & Balances
+      </button>
+      <button class="nav-tab-btn" data-tab="tab-predictor">
+        <i class="fa-solid fa-bolt"></i> Risk Evaluator (Live Scoring)
+      </button>
+      <button class="nav-tab-btn" data-tab="tab-customers">
+        <i class="fa-solid fa-users"></i> Account Directory
+      </button>
+      <button class="nav-tab-btn" data-tab="tab-recommendations">
+        <i class="fa-solid fa-shield-halved"></i> Strategic Advisory
+      </button>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-container">
+
+      <!-- ===================================================================
+           TAB 1: EXECUTIVE SUMMARY
+           =================================================================== -->
+      <section id="tab-summary" class="tab-pane active">
+        <div class="section-header">
+          <h2>Portfolio Health & Customer Retention Overview</h2>
+          <p>Macro-level metrics across 10,000 retail banking accounts and €764M+ in assets under management.</p>
+        </div>
+
+        <!-- KPI Cards Grid -->
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-top">
+              <span class="kpi-title">Total Active Accounts</span>
+              <div class="kpi-icon-badge kpi-icon-blue"><i class="fa-solid fa-users"></i></div>
+            </div>
+            <div class="kpi-value" id="kpi-total-customers">10,000</div>
+            <div class="kpi-subtext">Portfolio Baseline Cohort</div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-top">
+              <span class="kpi-title">Overall Attrition Rate</span>
+              <div class="kpi-icon-badge kpi-icon-red"><i class="fa-solid fa-arrow-trend-up"></i></div>
+            </div>
+            <div class="kpi-value" id="kpi-churn-rate" style="color: var(--danger);">20.37%</div>
+            <div class="kpi-subtext"><span style="color: var(--danger); font-weight: 600;">2,037</span> Exited Customers</div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-top">
+              <span class="kpi-title">Customer Retention Rate</span>
+              <div class="kpi-icon-badge kpi-icon-green"><i class="fa-solid fa-shield-check"></i></div>
+            </div>
+            <div class="kpi-value" id="kpi-retention-rate" style="color: var(--success);">79.63%</div>
+            <div class="kpi-subtext"><span style="color: var(--success); font-weight: 600;">7,963</span> Retained Accounts</div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-top">
+              <span class="kpi-title">At-Risk Asset Value</span>
+              <div class="kpi-icon-badge kpi-icon-orange"><i class="fa-solid fa-euro-sign"></i></div>
+            </div>
+            <div class="kpi-value" id="kpi-churned-balance">€185.6M</div>
+            <div class="kpi-subtext">24.3% of Total Deposit Capital</div>
+          </div>
+        </div>
+
+        <!-- Analytics Visualizations -->
+        <div class="analytics-grid-2">
+          <div class="analytics-card">
+            <div class="card-title-bar">
+              <h3>Portfolio Retention Distribution</h3>
+              <span class="card-badge">Target Imbalance (80/20)</span>
+            </div>
+            <div class="chart-wrapper">
+              <canvas id="chart-retention-distribution"></canvas>
+            </div>
+          </div>
+
+          <div class="analytics-card">
+            <div class="card-title-bar">
+              <h3>Regional Attrition & Deposit Concentration</h3>
+              <span class="card-badge">France • Germany • Spain</span>
+            </div>
+            <div class="chart-wrapper">
+              <canvas id="chart-regional-churn"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="analytics-grid-2">
+          <div class="analytics-card">
+            <div class="card-title-bar">
+              <h3>The "2-Product Sweet Spot" Phenomenon</h3>
+              <span class="card-badge">Product Holding vs. Churn Rate</span>
+            </div>
+            <div class="chart-wrapper">
+              <canvas id="chart-products-sweetspot"></canvas>
+            </div>
+          </div>
+
+          <div class="analytics-card">
+            <div class="card-title-bar">
+              <h3>Digital & Branch Engagement Impact</h3>
+              <span class="card-badge">Active vs. Inactive Members</span>
+            </div>
+            <div class="chart-wrapper">
+              <canvas id="chart-active-impact"></canvas>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           TAB 2: REGIONAL & DEMOGRAPHICS
+           =================================================================== -->
+      <section id="tab-demographics" class="tab-pane">
+        <div class="section-header">
+          <h2>Geographic & Demographic Attrition Analysis</h2>
+          <p>Evaluating regional service bottlenecks, gender variance, and generational age vulnerabilities.</p>
+        </div>
+
+        <div class="analytics-grid-2">
+          <div class="analytics-card">
+            <div class="card-title-bar">
+              <h3>Regional Churn Rate Comparison (%)</h3>
+              <span class="card-badge">Critical Risk in Germany</span>
+            </div>
+            <div class="chart-wrapper">
+              <canvas id="chart-geo-rates"></canvas>
+            </div>
+          </div>
+
+          <div class="analytics-card">
+            <div class="card-title-bar">
+              <h3>Age Bracket Vulnerability Distribution</h3>
+              <span class="card-badge">Generational Risk Exposure</span>
+            </div>
+            <div class="chart-wrapper">
+              <canvas id="chart-age-distribution"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="analytics-grid-2">
+          <div class="analytics-card">
+            <div class="card-title-bar">
+              <h3>Gender Demographic Breakdown</h3>
+              <span class="card-badge">Female vs. Male Attrition</span>
+            </div>
+            <div class="chart-wrapper">
+              <canvas id="chart-gender-breakdown"></canvas>
+            </div>
+          </div>
+
+          <div class="analytics-card">
+            <div class="card-title-bar">
+              <h3>Tenure Loyalty Curve</h3>
+              <span class="card-badge">Years with Institution</span>
+            </div>
+            <div class="chart-wrapper">
+              <canvas id="chart-tenure-curve"></canvas>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           TAB 3: PRODUCT & ACCOUNT DEPTH
+           =================================================================== -->
+      <section id="tab-products" class="tab-pane">
+        <div class="section-header">
+          <h2>Financial Balances & Product Depth Analysis</h2>
+          <p>Understanding liquidity flight, credit score dispersion, and cardholder behaviors.</p>
+        </div>
+
+        <div class="analytics-grid-2">
+          <div class="analytics-card">
+            <div class="card-title-bar">
+              <h3>Deposit Tier vs. Churn Tendency</h3>
+              <span class="card-badge">Account Balance Brackets</span>
+            </div>
+            <div class="chart-wrapper">
+              <canvas id="chart-balance-tiers"></canvas>
+            </div>
+          </div>
+
+          <div class="analytics-card">
+            <div class="card-title-bar">
+              <h3>Product Holding Count Breakdown</h3>
+              <span class="card-badge">1 to 4 Account Services</span>
+            </div>
+            <div class="chart-wrapper">
+              <canvas id="chart-product-breakdown"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="analytics-grid-2">
+          <div class="analytics-card">
+            <div class="card-title-bar">
+              <h3>Credit Card Ownership Retention Correlation</h3>
+              <span class="card-badge">Cardholder vs. Non-Cardholder</span>
+            </div>
+            <div class="chart-wrapper">
+              <canvas id="chart-card-impact"></canvas>
+            </div>
+          </div>
+
+          <div class="analytics-card">
+            <div class="card-title-bar">
+              <h3>Feature Association with Churn (Linear Sensitivity)</h3>
+              <span class="card-badge">Pearson Correlation</span>
+            </div>
+            <div class="chart-wrapper">
+              <canvas id="chart-correlations"></canvas>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           TAB 4: REAL-TIME CHURN EVALUATOR (LIVE SCORING ENGINE)
+           =================================================================== -->
+      <section id="tab-predictor" class="tab-pane">
+        <div class="section-header">
+          <h2>Real-Time Customer Churn Risk Assessment Engine</h2>
+          <p>Instantaneous multi-variable inferencing based on calibrated neural network representations.</p>
+        </div>
+
+        <div class="predictor-layout">
+          <!-- Input Form Card -->
+          <div class="analytics-card">
+            <div class="card-title-bar">
+              <h3>Customer Account & Demographic Parameters</h3>
+              <span class="card-badge">Single-Client Evaluation</span>
+            </div>
+
+            <!-- Quick Presets -->
+            <label style="font-size: 0.8rem; font-weight: 600; color: var(--text-muted); display: block; margin-bottom: 8px;">
+              ⚡ Quick Assessment Presets:
+            </label>
+            <div class="preset-btn-group">
+              <button type="button" class="preset-chip active" id="preset-loyal">
+                <i class="fa-solid fa-check"></i> Loyal Customer (France)
+              </button>
+              <button type="button" class="preset-chip" id="preset-risk-german">
+                <i class="fa-solid fa-triangle-exclamation"></i> At-Risk Client (Germany)
+              </button>
+              <button type="button" class="preset-chip" id="preset-inactive">
+                <i class="fa-solid fa-user-clock"></i> Inactive Middle-Aged Client
+              </button>
+            </div>
+
+            <form id="churn-prediction-form">
+              <div class="form-grid-3">
+                <div class="form-group">
+                  <label for="input-geography">Operating Country</label>
+                  <select id="input-geography" class="form-control">
+                    <option value="France">France</option>
+                    <option value="Germany">Germany</option>
+                    <option value="Spain">Spain</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="input-gender">Gender</label>
+                  <select id="input-gender" class="form-control">
+                    <option value="Female">Female</option>
+                    <option value="Male">Male</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="input-age">Age (Years)</label>
+                  <input type="number" id="input-age" class="form-control" value="32" min="18" max="95">
+                </div>
+              </div>
+
+              <div class="form-grid-3">
+                <div class="form-group">
+                  <label for="input-credit-score">Credit Score</label>
+                  <input type="number" id="input-credit-score" class="form-control" value="720" min="300" max="850">
+                </div>
+
+                <div class="form-group">
+                  <label for="input-balance">Account Balance (€)</label>
+                  <input type="number" id="input-balance" class="form-control" value="75000" min="0" step="500">
+                </div>
+
+                <div class="form-group">
+                  <label for="input-salary">Estimated Annual Salary (€)</label>
+                  <input type="number" id="input-salary" class="form-control" value="90000" min="0" step="1000">
+                </div>
+              </div>
+
+              <div class="form-grid-3">
+                <div class="form-group">
+                  <label for="input-tenure">Tenure (Years with Bank)</label>
+                  <input type="number" id="input-tenure" class="form-control" value="7" min="0" max="10">
+                </div>
+
+                <div class="form-group">
+                  <label for="input-products">Number of Bank Products</label>
+                  <select id="input-products" class="form-control">
+                    <option value="1">1 Product (Standard Risk)</option>
+                    <option value="2" selected>2 Products (Lowest Risk)</option>
+                    <option value="3">3 Products (High Risk)</option>
+                    <option value="4">4 Products (Extreme Risk)</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="input-active">Active Membership Status</label>
+                  <select id="input-active" class="form-control">
+                    <option value="1" selected>Active Member (Engaged)</option>
+                    <option value="0">Inactive Member (Dormant)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-grid-2" style="margin-bottom: 22px;">
+                <div class="form-group">
+                  <label for="input-card">Credit Card Facility</label>
+                  <select id="input-card" class="form-control">
+                    <option value="1" selected>Yes (Cardholder)</option>
+                    <option value="0">No (Non-Cardholder)</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="input-threshold">
+                    Operational Cut-off Threshold: <b id="threshold-val-display" style="color: var(--primary);">0.50</b>
+                  </label>
+                  <input type="range" id="input-threshold" min="0.30" max="0.70" step="0.05" value="0.50" style="margin-top: 10px;">
+                </div>
+              </div>
+
+              <button type="submit" class="btn-primary" id="btn-run-prediction">
+                <i class="fa-solid fa-calculator"></i> Calculate Churn Probability
+              </button>
+            </form>
+          </div>
+
+          <!-- Evaluation Result Card -->
+          <div class="result-card-container">
+            <div class="score-display-card" id="prediction-result-box">
+              <span class="risk-level-badge" id="res-badge" style="background-color: var(--success-bg); color: var(--success); border: 1px solid var(--success-border);">
+                Exceptional Loyalty (Retained)
+              </span>
+
+              <div class="prob-meter-container">
+                <div class="prob-number" id="res-prob-pct">2.77%</div>
+                <div class="prob-label">Predicted Probability of Customer Attrition</div>
+                <div class="prob-bar-track">
+                  <div class="prob-bar-fill" id="res-prob-bar" style="width: 2.77%; background-color: var(--success);"></div>
+                </div>
+              </div>
+
+              <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--text-muted); padding: 0 4px;">
+                <span>Active Decision Cut-off: <b id="res-active-threshold">0.50</b></span>
+                <span id="res-decision-status" style="font-weight: 600; color: var(--success);">Likely to Retain</span>
+              </div>
+
+              <div class="rec-list" id="res-recs-container">
+                <h4><i class="fa-solid fa-list-check" style="color: var(--primary);"></i> Recommended Retention Interventions:</h4>
+                <div class="rec-item">
+                  <i class="fa-solid fa-circle-check" style="color: var(--success); margin-top: 3px;"></i>
+                  <span>Customer engagement is healthy; continue regular excellence in service delivery.</span>
+                </div>
+                <div class="rec-item">
+                  <i class="fa-solid fa-circle-check" style="color: var(--success); margin-top: 3px;"></i>
+                  <span>Schedule standard annual portfolio and relationship review.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           TAB 5: ACCOUNT DIRECTORY (PAGINATED & SEARCHABLE)
+           =================================================================== -->
+      <section id="tab-customers" class="tab-pane">
+        <div class="section-header">
+          <h2>Customer Account Portfolio Explorer</h2>
+          <p>Query, cross-filter, and inspect individual account profiles across the 10,000-customer registry.</p>
+        </div>
+
+        <div class="table-controls-bar">
+          <div class="search-box-wrap">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="cust-search-input" class="form-control" placeholder="Search by ID, Surname, Country...">
+          </div>
+
+          <div class="filter-group">
+            <select id="filter-geography" class="form-control" style="width: 140px;">
+              <option value="All">All Countries</option>
+              <option value="France">France</option>
+              <option value="Germany">Germany</option>
+              <option value="Spain">Spain</option>
+            </select>
+
+            <select id="filter-products" class="form-control" style="width: 140px;">
+              <option value="All">All Products</option>
+              <option value="1">1 Product</option>
+              <option value="2">2 Products</option>
+              <option value="3">3 Products</option>
+              <option value="4">4 Products</option>
+            </select>
+
+            <select id="filter-active" class="form-control" style="width: 140px;">
+              <option value="All">All Activity</option>
+              <option value="1">Active Member</option>
+              <option value="0">Inactive Member</option>
+            </select>
+
+            <select id="filter-churn" class="form-control" style="width: 140px;">
+              <option value="All">All Statuses</option>
+              <option value="0">Retained (0)</option>
+              <option value="1">Churned (1)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Customer ID</th>
+                <th>Surname</th>
+                <th>Credit Score</th>
+                <th>Country</th>
+                <th>Gender</th>
+                <th>Age</th>
+                <th>Tenure</th>
+                <th>Balance</th>
+                <th>Products</th>
+                <th>Card</th>
+                <th>Active</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="customers-table-body">
+              <tr>
+                <td colspan="12" style="text-align: center; padding: 30px; color: var(--text-muted);">
+                  <i class="fa-solid fa-spinner fa-spin"></i> Loading account directory records...
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pagination-bar">
+          <span style="font-size: 0.82rem; color: var(--text-muted);" id="pagination-info">
+            Showing records 1 - 15
+          </span>
+          <div style="display: flex; gap: 8px;">
+            <button class="btn-page" id="btn-prev-page" disabled><i class="fa-solid fa-chevron-left"></i> Previous</button>
+            <button class="btn-page" id="btn-next-page">Next <i class="fa-solid fa-chevron-right"></i></button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           TAB 6: STRATEGIC RETENTION ADVISORY
+           =================================================================== -->
+      <section id="tab-recommendations" class="tab-pane">
+        <div class="section-header">
+          <h2>Executive Retention Advisory & Mitigation Framework</h2>
+          <p>Four empirical, data-driven operational decisions formulated to safeguard retail deposit liquidity.</p>
+        </div>
+
+        <div class="strategy-cards-grid" id="strategies-container">
+          <!-- Dynamic cards injected via JS -->
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Professional Standard Footer -->
+    <footer class="app-footer">
+      <p>
+        <b>Retail Banking Customer Retention Platform</b> • Enterprise Analytics & Portfolio Preservation<br>
+        PSEB Tech Destination Initiative • Developed by <b>Intikhab Ahmad Shah</b> (Trainee ID: TRN-2026-000059)<br>
+        Trainer: Respected. Ma'am Mahnoor Salman • Venue: Iqra University (IU), Islamabad
+      </p>
+    </footer>
+
+  </div>
+
+  <!-- Vendor Scripts (Local or CDN Fallback) -->
+  <script src="vendor/three.min.js"></script>
+  <script>
+    if (typeof THREE === 'undefined') {
+      document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"><\/script>');
+    }
+  </script>
+
+  <script src="vendor/gsap.min.js"></script>
+  <script>
+    if (typeof gsap === 'undefined') {
+      document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"><\/script>');
+    }
+  </script>
+
+  <script src="vendor/chart.umd.min.js"></script>
+  <script>
+    if (typeof Chart === 'undefined') {
+      document.write('<script src="https://cdn.jsdelivr.net/npm/chart.js"><\/script>');
+    }
+  </script>
+
+  <!-- Chart.js DataLabels Plugin (Local with CDN Fallback) -->
+  <script src="vendor/chartjs-plugin-datalabels.min.js"></script>
+  <script>
+    if (typeof ChartDataLabels === 'undefined') {
+      document.write('<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0"><\/script>');
+    }
+  </script>
+
+  <!-- Application Logic -->
+  <script src="app.js"></script>
+</body>
+</html>

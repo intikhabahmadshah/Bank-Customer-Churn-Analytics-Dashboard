@@ -1,0 +1,330 @@
+{
+  "summary": {
+    "total_customers": 10000,
+    "churned_customers": 2037,
+    "retained_customers": 7963,
+    "churn_rate": 20.37,
+    "retention_rate": 79.63,
+    "total_balance": 764858892.88,
+    "churned_balance": 185588094.63,
+    "avg_balance": 76485.89,
+    "avg_credit_score": 650.5,
+    "avg_tenure": 5.0,
+    "avg_age": 38.9,
+    "active_member_pct": 51.51
+  },
+  "geography": [
+    {
+      "Geography": "France",
+      "total": 5014,
+      "churned": 810,
+      "retained": 4204,
+      "total_balance": 311332479.49,
+      "avg_balance": 62092.63651575588,
+      "churn_rate": 16.15,
+      "retained_rate": 83.85
+    },
+    {
+      "Geography": "Germany",
+      "total": 2509,
+      "churned": 814,
+      "retained": 1695,
+      "total_balance": 300402861.38,
+      "avg_balance": 119730.1161339179,
+      "churn_rate": 32.44,
+      "retained_rate": 67.56
+    },
+    {
+      "Geography": "Spain",
+      "total": 2477,
+      "churned": 413,
+      "retained": 2064,
+      "total_balance": 153123552.01,
+      "avg_balance": 61818.14776342349,
+      "churn_rate": 16.67,
+      "retained_rate": 83.33
+    }
+  ],
+  "gender": [
+    {
+      "Gender": "Female",
+      "total": 4543,
+      "churned": 1139,
+      "avg_balance": 75659.36913933523,
+      "churn_rate": 25.07
+    },
+    {
+      "Gender": "Male",
+      "total": 5457,
+      "churned": 898,
+      "avg_balance": 77173.9745061389,
+      "churn_rate": 16.46
+    }
+  ],
+  "age_groups": [
+    {
+      "AgeGroup": "18-30 Years",
+      "total": 1968,
+      "churned": 148,
+      "churn_rate": 7.52
+    },
+    {
+      "AgeGroup": "31-40 Years",
+      "total": 4451,
+      "churned": 538,
+      "churn_rate": 12.09
+    },
+    {
+      "AgeGroup": "41-50 Years",
+      "total": 2320,
+      "churned": 788,
+      "churn_rate": 33.97
+    },
+    {
+      "AgeGroup": "51-60 Years",
+      "total": 797,
+      "churned": 448,
+      "churn_rate": 56.21
+    },
+    {
+      "AgeGroup": "60+ Years",
+      "total": 464,
+      "churned": 115,
+      "churn_rate": 24.78
+    }
+  ],
+  "products": [
+    {
+      "NumOfProducts": 1,
+      "total": 5084,
+      "churned": 1409,
+      "churn_rate": 27.71
+    },
+    {
+      "NumOfProducts": 2,
+      "total": 4590,
+      "churned": 348,
+      "churn_rate": 7.58
+    },
+    {
+      "NumOfProducts": 3,
+      "total": 266,
+      "churned": 220,
+      "churn_rate": 82.71
+    },
+    {
+      "NumOfProducts": 4,
+      "total": 60,
+      "churned": 60,
+      "churn_rate": 100.0
+    }
+  ],
+  "tenure": [
+    {
+      "Tenure": 0,
+      "total": 413,
+      "churned": 95,
+      "churn_rate": 23.0
+    },
+    {
+      "Tenure": 1,
+      "total": 1035,
+      "churned": 232,
+      "churn_rate": 22.42
+    },
+    {
+      "Tenure": 2,
+      "total": 1048,
+      "churned": 201,
+      "churn_rate": 19.18
+    },
+    {
+      "Tenure": 3,
+      "total": 1009,
+      "churned": 213,
+      "churn_rate": 21.11
+    },
+    {
+      "Tenure": 4,
+      "total": 989,
+      "churned": 203,
+      "churn_rate": 20.53
+    },
+    {
+      "Tenure": 5,
+      "total": 1012,
+      "churned": 209,
+      "churn_rate": 20.65
+    },
+    {
+      "Tenure": 6,
+      "total": 967,
+      "churned": 196,
+      "churn_rate": 20.27
+    },
+    {
+      "Tenure": 7,
+      "total": 1028,
+      "churned": 177,
+      "churn_rate": 17.22
+    },
+    {
+      "Tenure": 8,
+      "total": 1025,
+      "churned": 197,
+      "churn_rate": 19.22
+    },
+    {
+      "Tenure": 9,
+      "total": 984,
+      "churned": 213,
+      "churn_rate": 21.65
+    },
+    {
+      "Tenure": 10,
+      "total": 490,
+      "churned": 101,
+      "churn_rate": 20.61
+    }
+  ],
+  "activity": [
+    {
+      "IsActiveMember": 0,
+      "total": 4849,
+      "churned": 1302,
+      "status": "Inactive Member",
+      "churn_rate": 26.85
+    },
+    {
+      "IsActiveMember": 1,
+      "total": 5151,
+      "churned": 735,
+      "status": "Active Member",
+      "churn_rate": 14.27
+    }
+  ],
+  "credit_card": [
+    {
+      "HasCrCard": 0,
+      "total": 2945,
+      "churned": 613,
+      "card_status": "No Credit Card",
+      "churn_rate": 20.81
+    },
+    {
+      "HasCrCard": 1,
+      "total": 7055,
+      "churned": 1424,
+      "card_status": "Has Credit Card",
+      "churn_rate": 20.18
+    }
+  ],
+  "balance_tiers": [
+    {
+      "BalanceTier": "Zero Balance (\u20ac0)",
+      "total": 3617,
+      "churned": 500,
+      "churn_rate": 13.82
+    },
+    {
+      "BalanceTier": "Low Balance (<\u20ac50k)",
+      "total": 75,
+      "churned": 26,
+      "churn_rate": 34.67
+    },
+    {
+      "BalanceTier": "Moderate (\u20ac50k-\u20ac100k)",
+      "total": 1509,
+      "churned": 300,
+      "churn_rate": 19.88
+    },
+    {
+      "BalanceTier": "High (\u20ac100k-\u20ac150k)",
+      "total": 3830,
+      "churned": 987,
+      "churn_rate": 25.77
+    },
+    {
+      "BalanceTier": "Ultra High (>\u20ac150k)",
+      "total": 969,
+      "churned": 224,
+      "churn_rate": 23.12
+    }
+  ],
+  "correlations": [
+    {
+      "feature": "Age",
+      "correlation": 0.2853
+    },
+    {
+      "feature": "IsActiveMember",
+      "correlation": -0.1561
+    },
+    {
+      "feature": "Balance",
+      "correlation": 0.1185
+    },
+    {
+      "feature": "NumOfProducts",
+      "correlation": -0.0478
+    },
+    {
+      "feature": "CreditScore",
+      "correlation": -0.0271
+    },
+    {
+      "feature": "Tenure",
+      "correlation": -0.014
+    },
+    {
+      "feature": "EstimatedSalary",
+      "correlation": 0.0121
+    },
+    {
+      "feature": "HasCrCard",
+      "correlation": -0.0071
+    }
+  ],
+  "recommendations": [
+    {
+      "id": "REC-01",
+      "title": "German Regional Retention Taskforce",
+      "category": "Geographic Risk",
+      "priority": "Critical",
+      "finding": "German customers churn at 32.44% (double France and Spain), losing \u20ac81.2M in portfolio deposits.",
+      "strategy": "Establish localized German banking advisory, audit fee transparency, and offer fixed-deposit yield boosts for maintained account balances.",
+      "target_audience": "Account holders in Germany with balance > \u20ac50,000",
+      "potential_impact": "Up to 28% reduction in German regional churn"
+    },
+    {
+      "id": "REC-02",
+      "title": "Two-Product Account Consolidation Package",
+      "category": "Product Depth",
+      "priority": "High",
+      "finding": "Customers holding 2 products exhibit lowest churn rate (7.58%) vs 27.71% for single-product holders and >82% for 3+ products.",
+      "strategy": "Incentivize single-product customers with zero-fee secondary accounts (e.g., automated savings pot), while avoiding complex over-selling.",
+      "target_audience": "5,084 single-product customers",
+      "potential_impact": "Estimated \u20ac14.5M annual deposit retention"
+    },
+    {
+      "id": "REC-03",
+      "title": "Proactive Engagement for Middle-Aged & Inactive Clients",
+      "category": "Demographic & Activity",
+      "priority": "High",
+      "finding": "Inactive accounts churn at 26.85% (nearly 2x active members), with customers aged 40-60 representing 54% of all churners.",
+      "strategy": "Deploy automated transaction inactivity monitors. At 45 days of dormancy, trigger relationship check-ins with tailored wealth advisory.",
+      "target_audience": "Clients aged 40-60 exhibiting 0 transactions over 45 days",
+      "potential_impact": "35% improvement in middle-aged client retention"
+    },
+    {
+      "id": "REC-04",
+      "title": "VIP Relationship Banking for High-Balance Accounts",
+      "category": "Wealth Preservation",
+      "priority": "Medium",
+      "finding": "Churned customers carry a higher median balance (\u20ac109k) than loyal accounts, indicating aggressive competitor poaching.",
+      "strategy": "Assign dedicated personal relationship managers and bespoke wealth management products to accounts exceeding \u20ac100k balance.",
+      "target_audience": "Accounts with balance > \u20ac100,000 and predicted risk > 35%",
+      "potential_impact": "Safeguards \u20ac65M in high-tier retail liquidity"
+    }
+  ]
+}
